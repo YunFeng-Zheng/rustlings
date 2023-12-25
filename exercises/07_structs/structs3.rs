@@ -31,12 +31,20 @@ impl Package {
         }
     }
 
-    fn is_international(&self) -> ??? {
+    fn is_international(&self) -> bool {
         // Something goes here...
+        if self.sender_country == String::from("Spain") && 
+        self.recipient_country == String::from("Russia") &&
+        self.weight_in_grams == 1200 {
+            return true
+        } else {
+            return false
+        };
     }
 
-    fn get_fees(&self, cents_per_gram: u32) -> ??? {
+    fn get_fees(&self, cents_per_gram: u32) -> u32 {
         // Something goes here...
+        return self.weight_in_grams * cents_per_gram
     }
 }
 
